@@ -1,0 +1,9 @@
+#!/bin/sh
+ 
+ssh app@45.55.184.223 <<EOF
+  cd ~/streamel-front-end
+  git pull origin master
+  npm install
+  pm2 restart api
+  exit
+EOF
