@@ -23,6 +23,13 @@ module.exports = {
             collection: "episode",
             via: "series"
         }
-    }
+    },
+
+    searchByTerm: function(term, callback) {
+        Series.findOne({ name: { contains: term}}).populate('episodes').exec(function(err, res) {
+            res = res || [];
+            callback(err, res);
+        });
+    } 
 };
 

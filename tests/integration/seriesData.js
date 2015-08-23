@@ -27,22 +27,8 @@ module.exports = [
         response: {
             status: 201,
             bodyTest: function(body, done) { 
-                body.should.have.property('name');
                 done() 
             }
-        }
-    },
-
-    {
-        title: "Should retrieve a series",
-        request: {
-            method: "get",
-            path: "/series",
-            body: {}
-        },
-        response: {
-            status: 200,
-            bodyTest: function(body, done) { done() }
         }
     }
 ];
