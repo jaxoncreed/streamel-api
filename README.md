@@ -1,3 +1,3 @@
 # streamel-api
 
-a [Sails](http://sailsjs.org) application
+a [Sails](http://sailsjs.org) application. Serves streamel.
