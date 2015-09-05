@@ -28,6 +28,7 @@ module.exports = {
     searchByTerm: function(term, callback) {
         Series.findOne({ name: { contains: term}}).populate('episodes').exec(function(err, res) {
             res = res || [];
+            res = (Array.isArray(res)) ? res : [res];
             callback(err, res);
         });
     } 

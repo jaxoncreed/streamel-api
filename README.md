@@ -15,12 +15,12 @@ POST http://localhost:1337/series
         {
             "name": "Meet Tommy",
             "description": "He's Great!",
-            "url": "sampleUrl"
+            "url": "http://videos.streamel.com/test.mp4"
         },
         {
             "name": "Tommy goes to school",
             "description": "Will his teacher be mean?",
-            "url": "sampleUrl"
+            "url": "http://videos.streamel.com/test.mp4"
         }
     ]
 }
