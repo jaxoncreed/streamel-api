@@ -11,16 +11,19 @@ POST http://localhost:1337/series
     "name": "The Tommy Show",
     "description": "It's the Tommy Show!",
     "user": "admin",
+    "thumbnail": "http://cms.streamel.com/images/testPoster.jpg",
     "episodes": [
         {
             "name": "Meet Tommy",
             "description": "He's Great!",
-            "url": "http://videos.streamel.com/test.mp4"
+            "thumbnail": "http://cms.streamel.com/images/test.png",
+            "url": "http://videos.streamel.com/videos/test.mp4"
         },
         {
             "name": "Tommy goes to school",
             "description": "Will his teacher be mean?",
-            "url": "http://videos.streamel.com/test.mp4"
+            "thumbnail": "http://cms.streamel.com/images/test.png",
+            "url": "http://videos.streamel.com/videos/test.mp4"
         }
     ]
 }

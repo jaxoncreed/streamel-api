@@ -19,6 +19,9 @@ module.exports = {
             type: "string",
             required: true
         },
+        thumbnail: {
+            type: "string"
+        },
         episodes: {
             collection: "episode",
             via: "series"
