@@ -7,33 +7,19 @@
 
 module.exports = {
 
-    attributes: {
-        name: {
-            type: "string",
-            required: true,
-        },
-        description: {
-            type: "string",
-        },
-        user: {
-            type: "string",
-            required: true
-        },
-        thumbnail: {
-            type: "string"
-        },
-        episodes: {
-            collection: "episode",
-            via: "series"
-        }
+  attributes: {
+    meta: {
+        model: 'Meta',
+        required: true
     },
-
-    searchByTerm: function(term, callback) {
-        Series.findOne({ name: { contains: term}}).populate('episodes').exec(function(err, res) {
-            res = res || [];
-            res = (Array.isArray(res)) ? res : [res];
-            callback(err, res);
-        });
-    } 
+    episodes: {
+        collection: 'Episode',
+        via: 'series',
+        required: true
+    },
+    poster: {
+        type: 'string'
+    }
+  }
 };
 

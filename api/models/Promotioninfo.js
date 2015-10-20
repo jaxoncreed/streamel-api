@@ -1,5 +1,5 @@
 /**
-* Episode.js
+* Promotioninfo.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
@@ -8,18 +8,15 @@
 module.exports = {
 
   attributes: {
-    meta: {
+    promotionFor: {
         model: 'Meta',
         required: true
     },
-    series: {
-        model: 'Series',
-        required: true
+    trailers: {
+        collection: 'Trailer',
+        via: 'promotionInfoFor'
     },
-    video: {
-        type: 'string'
-    },
-    thumbnail: {
+    pitch: {
         type: 'string'
     }
   }

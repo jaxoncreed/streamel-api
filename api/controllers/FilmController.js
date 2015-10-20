@@ -1,7 +1,7 @@
 /**
- * SeriesController
+ * FilmController
  *
- * @description :: Server-side logic for managing series
+ * @description :: Server-side logic for managing films
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
