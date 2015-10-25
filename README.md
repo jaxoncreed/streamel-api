@@ -2,6 +2,34 @@
 
 a [Sails](http://sailsjs.org) application. Serves streamel.
 
+##Create a User
+```
+POST http://localhost:1337/user
+{
+    "meta": {
+        "type": "user",
+        "name": "John Doe",
+        "description": "I like starring in movies.",
+        "tags": [],
+        "searchable": false
+    },
+    "email": "john@example.com",
+    "password": "123456"
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ##Add a sereis:
 

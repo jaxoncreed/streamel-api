@@ -25,7 +25,8 @@ module.exports = {
         },
         pieces: {
             collection: 'Meta',
-            via: 'user'
+            via: 'user',
+            defaultsTo: []
         },
         toJSON: function() {
             var obj = this.toObject();

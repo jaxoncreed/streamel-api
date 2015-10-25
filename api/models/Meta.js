@@ -5,28 +5,39 @@
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
 
+var afterCreateMap = {
+    user: function(meta, cb) {
+        cb();
+    },
+    film: function(meta, cb) {
+        cb();
+    }
+}
+
 module.exports = {
 
   attributes: {
     type: {
         type: 'string',
-        emum: ['trailer', 'episode', 'series', 'film', 'user'],
+        enum: ['trailer', 'episode', 'series', 'film', 'user'],
         required: true
     },
     name: {
         type: 'string',
-        required: true
     },
     description: {
         type: 'string'
     },
     tags: {
         type: 'array',
-        required: true
+        defaultsTo: []
     },
     searchable: {
         type: 'boolean',
-        required: true
+        defaultsTo: 'true'
+    },
+    creator: {
+        model: 'User'
     },
     user: {
         model: 'User'
@@ -43,6 +54,10 @@ module.exports = {
     episode: {
         model: 'Episode'
     }
+  },
+
+  afterCreate: function(meta, cb) {
+    afterCreateMap[meta.type](meta, cb);
   }
 };
 
