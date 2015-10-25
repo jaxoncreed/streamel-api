@@ -1,9 +1,9 @@
 /**
-* User.js
-*
-* @description :: TODO: You might write a short summary of how this model works and what it represents here.
-* @docs        :: http://sailsjs.org/#!documentation/models
-*/
+ * User.js
+ *
+ * @description :: TODO: You might write a short summary of how this model works and what it represents here.
+ * @docs        :: http://sailsjs.org/#!documentation/models
+ */
 
 var bcrypt = require('bcrypt');
 
@@ -11,7 +11,8 @@ module.exports = {
     attributes: {
         meta: {
             model: 'Meta',
-            required: true
+            required: true,
+            via: 'user'
         },
         email: {
             type: 'email',
@@ -25,7 +26,7 @@ module.exports = {
         },
         pieces: {
             collection: 'Meta',
-            via: 'user',
+            via: 'creator',
             defaultsTo: []
         },
         toJSON: function() {
@@ -46,5 +47,8 @@ module.exports = {
                 }
             });
         });
+    },
+    afterCreate: function(user, cb) {
+        Meta.update({ id: user.meta }, { user: user.id }).exec(cb);
     }
 };

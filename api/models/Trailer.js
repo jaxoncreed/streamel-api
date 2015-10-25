@@ -1,28 +1,30 @@
 /**
-* Trailer.js
-*
-* @description :: TODO: You might write a short summary of how this model works and what it represents here.
-* @docs        :: http://sailsjs.org/#!documentation/models
-*/
+ * Trailer.js
+ *
+ * @description :: TODO: You might write a short summary of how this model works and what it represents here.
+ * @docs        :: http://sailsjs.org/#!documentation/models
+ */
 
 module.exports = {
 
-  attributes: {
-    meta: {
-        model: 'Meta',
-        required: true
+    attributes: {
+        meta: {
+            model: 'Meta',
+            required: true
+        },
+        promotionInfoFor: {
+            model: 'Promotioninfo',
+            required: true
+        },
+        video: {
+            type: 'string',
+            required: true
+        },
+        thumbnail: {
+            type: 'string'
+        }
     },
-    promotionInfoFor: {
-        model: 'Promotioninfo',
-        required: true
-    },
-    video: {
-        type: 'string',
-        required: true
-    },
-    thumbnail: {
-        type: 'string'
+    afterCreate: function(trailer, cb) {
+        Meta.update({ id: trailer.meta }, { trailer: trailer.id }).exec(cb);
     }
-  }
 };
-
