@@ -18,13 +18,5 @@
 
 
 module.exports.policies = {
-  '*': true,
-  'SeriesController': {
-    edit: 'isAuthenticated',
-    create: 'isAuthenticated'
-  },
-  'EpisodeController': {
-    edit: 'isAuthenticated',
-    create: 'isAuthenticated'
-  },
+  '*': true
 };
