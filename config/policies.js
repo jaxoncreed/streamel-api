@@ -18,13 +18,39 @@
 
 
 module.exports.policies = {
-  '*': true,
-  'SeriesController': {
-    edit: 'isAuthenticated',
-    create: 'isAuthenticated'
-  },
-  'EpisodeController': {
-    edit: 'isAuthenticated',
-    create: 'isAuthenticated'
-  },
+    '*': false,
+    'UserController': {
+        find: true,
+        findOne: true,
+        create: 'isAuthenticated'
+    },
+    'EpisodeController': {
+        find: true,
+        findOne: true,
+        create: 'isAuthenticated'
+    },
+    'FilmController': {
+        find: true,
+        findOne: true,
+        create: 'isAuthenticated'
+    },
+    'MetaController': {
+        find: true,
+        findOne: true,
+    },
+    'PromotioninfoController': {
+        find: true,
+        findOne: true,
+        create: 'isAuthenticated'
+    },
+    'SeriesController': {
+        find: true,
+        findOne: true,
+        create: 'isAuthenticated'
+    },
+    'TrailerController': {
+        find: true,
+        findOne: true,
+        create: 'isAuthenticated'
+    },
 };

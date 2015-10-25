@@ -1,9 +1,9 @@
+var password = require('../../secrets').adminPass;
+
 module.exports = function(req, res, next) {
-   if (req.isAuthenticated()) {
+    if (req.headers.password === password) {
         return next();
-    }
-    else{
-        // TODO: This doesn't redirect to the right place. Should just indicate access failure
-        return res.redirect('/login');
+    } else {
+        return res.status(403).send();
     }
 };
